@@ -1,6 +1,7 @@
 "use client";
 import { useCart } from "../context/CartContext";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function Cart() {
   const { cart, removeFromCart, updateCartItem } = useCart();
@@ -40,9 +41,11 @@ export default function Cart() {
                 className="flex items-center justify-between p-4 border rounded-lg bg-white shadow"
               >
                 <div className="flex items-center">
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.title}
+                    height={20}
+                    width={20}
                     className="w-16 h-16 rounded-lg object-cover mr-4"
                   />
                   <div>

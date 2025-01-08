@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useCart } from "../context/CartContext";
+import Image from "next/image";
 
 export default function Products() {
   const [products, setProducts] = useState<any[]>([]);
@@ -46,10 +47,13 @@ export default function Products() {
             className="w-full max-w-sm mx-auto bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700"
           >
             <Link href={`/Products/${product.id}`}>
-              <img
+              <Image
                 className="p-6 rounded-t-lg object-cover h-50px w-full"
                 src={product.image}
                 alt={product.title}
+                width={200}
+                height={200}
+                
               />
             </Link>
             <div className="px-5 pb-5">
