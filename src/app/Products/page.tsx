@@ -6,7 +6,7 @@ import { useCart } from "../context/CartContext";
 export default function Products() {
   const [products, setProducts] = useState<any[]>([]);
   const { addToCart } = useCart(); // Access addToCart function
- 
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -21,12 +21,24 @@ export default function Products() {
     fetchProducts();
   }, []);
 
-
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-2xl font-bold text-center mb-6 text-gray-800 dark:text-white">
-        Product List
-      </h1>
+      {/* Header Section */}
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-2xl font-bold text-gray-800 dark:text-white">
+          Product List
+        </h1>
+        {/* "View Cart" Button */}
+        <Link href="/cart">
+          <button
+            className="text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-500 dark:hover:bg-green-600 dark:focus:ring-green-700"
+          >
+            View Cart
+          </button>
+        </Link>
+      </div>
+
+      {/* Products Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {products.map((product: any) => (
           <div
@@ -62,7 +74,7 @@ export default function Products() {
                   }
                   className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 >
-                  Add to cart
+                  Add to Cart
                 </button>
               </div>
             </div>
