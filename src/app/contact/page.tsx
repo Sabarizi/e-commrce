@@ -35,7 +35,7 @@ export default function Contact() {
       <div className="container mx-auto max-w-4xl bg-white rounded-lg shadow-md p-8">
         <h1 className="text-4xl font-bold text-blue-600 mb-6 text-center">Contact Us</h1>
         <p className="text-gray-700 text-center mb-6">
-          We'd love to hear from you! Fill out the form below to get in touch.
+          Wed love to hear from you! Fill out the form below to get in touch.
         </p>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
