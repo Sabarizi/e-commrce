@@ -6,7 +6,7 @@ import { useCart } from "../context/CartContext";
 export default function Products() {
   const [products, setProducts] = useState<any[]>([]);
   const { addToCart } = useCart(); // Access addToCart function
-  const [loading, setLoading] = useState(true);
+ 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -19,19 +19,8 @@ export default function Products() {
     };
 
     fetchProducts();
-  }, [products]);
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center h-screen bg-gray-100">
-        <div className="text-center">
-          <div className="w-16 h-16 border-4 border-blue-800 border-dotted rounded-full animate-spin mx-auto"></div>
-          <p className="mt-4 text-lg font-medium text-gray-800">
-            Loading Products Please Wait......
-          </p>
-        </div>
-      </div>
-    );
-  }
+  }, []);
+
 
   return (
     <div className="container mx-auto px-4 py-8">
